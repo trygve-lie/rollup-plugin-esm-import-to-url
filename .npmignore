@@ -1,0 +1,16 @@
+node_modules
+.nyc_output/
+benchmark/
+example/
+utils/
+test/
+src/
+*.log
+*.png
+*.svg
+.gitignore
+.npmignore
+.eslintrc
+.eslintignore
+.travis.yml
+rollup.config.js

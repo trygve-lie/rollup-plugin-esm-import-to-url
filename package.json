@@ -1,0 +1,40 @@
+{
+  "name": "rollup-plugin-esm-external-to-url",
+  "version": "1.0.0",
+  "description": "Rollup plugin to transform external imports to URLs in ES modules",
+  "main": "dist/plugin.cjs.js",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "test": "tap test/*.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "node --experimental-modules ./example/server.mjs",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trygve-lie/rollup-plugin-esm-external-to-url.git"
+  },
+  "keywords": [
+    "rollup-plugin",
+    "rollup.js",
+    "resolve",
+    "rollup",
+    "esm"
+  ],
+  "author": "Trygve Lie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trygve-lie/rollup-plugin-esm-external-to-url/issues"
+  },
+  "homepage": "https://github.com/trygve-lie/rollup-plugin-esm-external-to-url#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.18.0",
+    "eslint": "6.0.1",
+    "rollup": "1.16.2",
+    "tap": "14.3.1"
+  }
+}
