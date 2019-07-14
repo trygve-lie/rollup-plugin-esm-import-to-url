@@ -4,7 +4,7 @@ Rollup plugin to transform external imports to URLs in ES modules.
 
 [![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-external-to-url.svg?style=flat-square)](https://david-dm.org/trygve-lie/rollup-plugin-esm-external-to-url)
 [![Build Status](http://img.shields.io/travis/trygve-lie/rollup-plugin-esm-external-to-url/master.svg?style=flat-square)](https://travis-ci.org/trygve-lie/rollup-plugin-esm-external-to-url)
-[![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-external-to-url/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-external-to-url?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-external-to-url/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-external-to-url?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/trygve-lie/rollup-plugin-esm-external-to-url.svg)](https://greenkeeper.io/)
 
 ## Installation
 
