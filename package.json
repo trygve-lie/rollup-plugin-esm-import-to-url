@@ -1,7 +1,7 @@
 {
-  "name": "rollup-plugin-esm-external-to-url",
+  "name": "rollup-plugin-esm-import-to-url",
   "version": "1.0.0",
-  "description": "Rollup plugin to transform external imports to URLs in ES modules",
+  "description": "Rollup plugin to transform imports to external URLs in ES modules",
   "main": "dist/plugin.cjs.js",
   "directories": {
     "dist": "dist"
@@ -15,21 +15,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trygve-lie/rollup-plugin-esm-external-to-url.git"
+    "url": "git+https://github.com/trygve-lie/rollup-plugin-esm-import-to-url.git"
   },
   "keywords": [
     "rollup-plugin",
     "rollup.js",
-    "resolve",
     "rollup",
+    "import",
+    "url",
     "esm"
   ],
   "author": "Trygve Lie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trygve-lie/rollup-plugin-esm-external-to-url/issues"
+    "url": "https://github.com/trygve-lie/rollup-plugin-esm-import-to-url/issues"
   },
-  "homepage": "https://github.com/trygve-lie/rollup-plugin-esm-external-to-url#readme",
+  "homepage": "https://github.com/trygve-lie/rollup-plugin-esm-import-to-url#readme",
   "devDependencies": {
     "eslint-config-airbnb-base": "13.2.0",
     "eslint-plugin-import": "2.18.0",

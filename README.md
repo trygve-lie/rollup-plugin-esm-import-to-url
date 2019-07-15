@@ -1,25 +1,25 @@
-# rollup-plugin-esm-external-to-url
+# rollup-plugin-esm-import-to-url
 
-Rollup plugin to transform external imports to URLs in ES modules.
+Rollup plugin to transform imports to external URLs in ES modules
 
-[![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-external-to-url.svg?style=flat-square)](https://david-dm.org/trygve-lie/rollup-plugin-esm-external-to-url)
-[![Build Status](http://img.shields.io/travis/trygve-lie/rollup-plugin-esm-external-to-url/master.svg?style=flat-square)](https://travis-ci.org/trygve-lie/rollup-plugin-esm-external-to-url)
-[![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-external-to-url/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-external-to-url?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/trygve-lie/rollup-plugin-esm-external-to-url.svg)](https://greenkeeper.io/)
+[![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-import-to-url.svg?style=flat-square)](https://david-dm.org/trygve-lie/rollup-plugin-esm-import-to-url)
+[![Build Status](http://img.shields.io/travis/trygve-lie/rollup-plugin-esm-import-to-url/master.svg?style=flat-square)](https://travis-ci.org/trygve-lie/rollup-plugin-esm-import-to-url)
+[![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/trygve-lie/rollup-plugin-esm-import-to-url.svg)](https://greenkeeper.io/)
 
 ## Installation
 
 ```bash
-$ npm install rollup-plugin-esm-external-to-url
+$ npm install rollup-plugin-esm-import-to-url
 ```
 
 ## Usage
 
 ```js
-import esmExternalToUrl from 'rollup-plugin-esm-external-to-url';
+import esmImportToUrl from 'rollup-plugin-esm-import-to-url';
 
 export default {
     input: 'source/main.js',
-    plugins: [esmExternalToUrl({
+    plugins: [esmImportToUrl({
         map: {
             'some-library': 'http://cdn.com/some-library/v1',
         },
@@ -33,9 +33,9 @@ export default {
 
 ## Description
 
-This plugin transforms ESM import statements into absolute URLs. The module
-refered too by the import statement will be treated as an external and its
-source will not be included in the bundle but refered to by the URL.
+This plugin transforms import statements into external absolute URLs in ES modules.
+The module refered too by the import statement will be treated as an external and
+its source will not be included in the bundle but refered to by the URL.
 
 In our source:
 
@@ -48,7 +48,7 @@ In our Rollup config, we map `lit-element` to a bundle on a CDN:
 ```js
 export default {
     input: 'source/main.js',
-    plugins: [esmExternalToUrl({
+    plugins: [esmImportToUrl({
         map: {
             'lit-element': 'https://cdn.pika.dev/lit-element/v2',
         },
@@ -77,7 +77,7 @@ This plugin take the following options:
 
 ## Note on externals
 
-The imports defined for `map` to this module must not occure in the `external` option.
+The imports defined for `map` to this module must not occure in the Rollup `external` option.
 If so, this module will throw.
 
 In other words, this will not work:
@@ -86,7 +86,7 @@ In other words, this will not work:
 export default {
     input: 'source/main.js',
     external: ['lit-element'],
-    plugins: [esmExternalToUrl({
+    plugins: [esmImportToUrl({
         map: {
             'lit-element': 'https://cdn.pika.dev/lit-element/v2',
         },
@@ -100,7 +100,7 @@ export default {
 
 ## ESM only
 
-This module will only work, and make sense, when the output are ES modules.
+This module will only work when the output are ES modules.
 
 ## License
 
