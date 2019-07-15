@@ -20,7 +20,7 @@ import esmImportToUrl from 'rollup-plugin-esm-import-to-url';
 export default {
     input: 'source/main.js',
     plugins: [esmImportToUrl({
-        map: {
+        external: {
             'some-library': 'http://cdn.com/some-library/v1',
         },
     })],
@@ -49,7 +49,7 @@ In our Rollup config, we map `lit-element` to a bundle on a CDN:
 export default {
     input: 'source/main.js',
     plugins: [esmImportToUrl({
-        map: {
+        external: {
             'lit-element': 'https://cdn.pika.dev/lit-element/v2',
         },
     })],
@@ -72,12 +72,12 @@ This plugin take the following options:
 
 | option             | default  | type      | required | details                                                                                                  |
 | ------------------ | -------- | --------- | -------- | -------------------------------------------------------------------------------------------------------- |
-| map                | `{}`     | `object`  | `false`  | Mapping between the import resource (the object key) and the URL (the object value).                     |
+| external           | `{}`     | `object`  | `false`  | Mapping between the import resource (the object key) and the external URL (the object value).            |
 
 
 ## Note on externals
 
-The imports defined for `map` to this module must not occure in the Rollup `external` option.
+The imports defined for `external` to this module must not occure in the Rollup `external` option.
 If so, this module will throw.
 
 In other words, this will not work:
@@ -87,7 +87,7 @@ export default {
     input: 'source/main.js',
     external: ['lit-element'],
     plugins: [esmImportToUrl({
-        map: {
+        external: {
             'lit-element': 'https://cdn.pika.dev/lit-element/v2',
         },
     })],

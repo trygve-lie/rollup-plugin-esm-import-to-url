@@ -12,12 +12,12 @@ tap.test('plugin() - target is not an absolute URL - should reject process', (t)
     const options = {
         input: simple,
         plugins: [plugin({
-            map: {
+            external: {
                 'foo': './foo'
             }
         })],
     }
-    t.rejects(rollup.rollup(options), new Error('Mapping target must be an absolute URLs'));
+    t.rejects(rollup.rollup(options), new Error('External target must be an absolute URL.'));
     t.end();
 });
 
@@ -26,11 +26,11 @@ tap.test('plugin() - target is refered to in external - should reject process', 
         input: simple,
         external: ['foo'],
         plugins: [plugin({
-            map: {
+            external: {
                 'foo': 'http://not.a.host.com'
             }
         })],
     }
-    t.rejects(rollup.rollup(options), new Error('Module to be mapped must not be set as external. Please remove module from the external config.'));
+    t.rejects(rollup.rollup(options), new Error('Module to be mapped must not be pressent in the Rollup external config. Please remove module from the Rollup external config.'));
     t.end();
 });
