@@ -1,7 +1,7 @@
 export default {
-    input: "src/plugin.mjs",
-    external: [ 'node-fetch', 'url' ],
+    input: 'src/plugin.mjs',
+    external: ['node-fetch', 'url'],
     output: [
-      { file: "dist/plugin.cjs.js", format: "cjs" },
+        { file: 'dist/plugin.cjs.js', format: 'cjs' },
     ]
 };

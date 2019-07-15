@@ -3,12 +3,12 @@ import App from './app/app.js';
 
 const ready = () => {
     return new Promise((resolve, reject) => {
-        document.addEventListener("DOMContentLoaded", (event) => {
+        document.addEventListener('DOMContentLoaded', (event) => {
             const el = document.getElementById('app');
             resolve(firstElement(el));
         });
     });
-}
+};
 
 const start = async () => {
     const el = await ready();

@@ -5,7 +5,6 @@ import { data } from '../data/data.js';
 export default class App {
     constructor(root) {
         this.root = root;
-
     }
 
     render() {
