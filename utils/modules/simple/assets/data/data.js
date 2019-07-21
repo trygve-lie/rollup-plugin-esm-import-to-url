@@ -2,7 +2,7 @@ function random(min, max) {
     return Math.floor(min + Math.random() * (max + 1 - min));
 }
 
-export function data() {
+export default function data() {
     return [
         random(0, 20),
         random(20, 40),

@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "tap test/*.mjs",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ext=mjs,js",
+    "lint:fix": "eslint . --fix --ext=mjs,js",
     "start": "node --experimental-modules ./example/server.mjs",
     "build": "rollup -c"
   },

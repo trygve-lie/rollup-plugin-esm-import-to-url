@@ -22,11 +22,11 @@ const MIME_TYPES = {
 
 export default class HttpServer {
     constructor({ wwwroot = './' } = {}) {
-        this.server;
+        this.server = undefined;
 
         this.app = http.createServer((req, res) => {
-            let filePath = '.' + req.url;
-            if (filePath == './') {
+            let filePath = `.${req.url}`;
+            if (filePath === './') {
                 filePath = './index.html';
             }
 
@@ -34,7 +34,7 @@ export default class HttpServer {
 
             fs.readFile(file, (error, content) => {
                 if (error) {
-                    if (error.code == 'ENOENT') {
+                    if (error.code === 'ENOENT') {
                         res.statusCode = 404;
                         res.setHeader('Content-Type', 'text/plain');
                         res.end('Not found');
@@ -58,7 +58,7 @@ export default class HttpServer {
     }
 
     listen(port = 0) {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             this.server = this.app.listen(port, 'localhost', () => {
                 const address = `http://${this.server.address().address}:${
                     this.server.address().port
@@ -70,7 +70,7 @@ export default class HttpServer {
 
     close() {
         return new Promise((resolve, reject) => {
-            this.server.close(err => {
+            this.server.close((err) => {
                 if (err) {
                     reject(err);
                 } else {

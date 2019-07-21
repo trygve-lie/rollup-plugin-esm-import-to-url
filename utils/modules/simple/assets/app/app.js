@@ -1,6 +1,6 @@
 import { replaceElement } from '../utils/dom.js';
-import * as views from './views.js';
-import { data } from '../data/data.js';
+import view from './views.js';
+import data from '../data/data.js';
 
 export default class App {
     constructor(root) {
@@ -9,7 +9,7 @@ export default class App {
 
     render() {
         const items = data();
-        const el = views.valueList(items);
+        const el = view(items);
         this.root = replaceElement(this.root, el);
     }
 
