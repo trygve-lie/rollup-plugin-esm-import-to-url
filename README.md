@@ -1,6 +1,6 @@
 # rollup-plugin-esm-import-to-url
 
-Rollup plugin to transform imports to external URLs in ES modules
+Rollup plugin to transform "bare" import specifiers to absolute URLs in ES modules
 
 [![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-import-to-url.svg?style=flat-square)](https://david-dm.org/trygve-lie/rollup-plugin-esm-import-to-url)
 [![Build Status](http://img.shields.io/travis/trygve-lie/rollup-plugin-esm-import-to-url/master.svg?style=flat-square)](https://travis-ci.org/trygve-lie/rollup-plugin-esm-import-to-url)
@@ -33,9 +33,10 @@ export default {
 
 ## Description
 
-This plugin transforms import statements into external absolute URLs in ES modules.
-The module refered too by the import statement will be treated as an external and
-its source will not be included in the bundle but refered to by the URL.
+This plugin transforms "bare" import specifiers to absolute URL specifiers in
+ES  modules. The module refered too by the "bare" import specifier will be
+treated  as an external and its source will not be included in the bundle but
+refered to by the URL.
 
 In our source:
 
@@ -72,7 +73,7 @@ This plugin take the following options:
 
 | option             | default  | type      | required | details                                                                                                  |
 | ------------------ | -------- | --------- | -------- | -------------------------------------------------------------------------------------------------------- |
-| external           | `{}`     | `object`  | `false`  | Mapping between the import resource (the object key) and the external URL (the object value).            |
+| external           | `{}`     | `object`  | `false`  | Mapping between the "bare" import specifier (the object key) and the absolute URL (the object value).            |
 
 
 ## Note on externals
