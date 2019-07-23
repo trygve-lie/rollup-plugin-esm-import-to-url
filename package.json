@@ -7,7 +7,8 @@
     "dist": "dist"
   },
   "scripts": {
-    "test": "tap test/*.mjs",
+    "test": "tap test/*.mjs --no-coverage",
+    "test:snapshot": "TAP_SNAPSHOT=1 tap test/*.mjs --no-coverage",
     "lint": "eslint . --ext=mjs,js",
     "lint:fix": "eslint . --fix --ext=mjs,js",
     "start": "node --experimental-modules ./example/server.mjs",
