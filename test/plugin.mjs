@@ -51,7 +51,7 @@ tap.test('plugin() - basic module - should replace lit-element with CDN url', as
     const bundle = await rollup.rollup(options);
     const { output } = await bundle.generate({ format: 'esm' });
 
-    t.matchSnapshot(output[0].code, 'basic example');
+    t.matchSnapshot(output[0].code.split('\r').join(''), 'basic example');
     t.end();
 });
 
@@ -71,6 +71,6 @@ tap.test('plugin() - simple module - should replace lit-element with CDN url', a
     const bundle = await rollup.rollup(options);
     const { output } = await bundle.generate({ format: 'esm' });
 
-    t.matchSnapshot(output[0].code, 'simple example');
+    t.matchSnapshot(output[0].code.split('\r').join(''), 'simple example');
     t.end();
 });
