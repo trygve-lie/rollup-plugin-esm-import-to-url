@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-esm-import-to-url",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Rollup plugin to transform imports to external URLs in ES modules",
   "main": "dist/plugin.cjs.js",
   "directories": {
