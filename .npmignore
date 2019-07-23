@@ -14,3 +14,4 @@ src/
 .eslintignore
 .travis.yml
 rollup.config.js
+tap-snapshots
