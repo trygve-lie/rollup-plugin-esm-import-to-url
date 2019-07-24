@@ -43,7 +43,7 @@ tap.test('plugin() - target is refered to in external - should reject process', 
     t.end();
 });
 
-tap.test('plugin() - basic module - should replace lit-element with CDN url', async (t) => {
+tap.test('plugin() - basic module - should replace lit-element with CDN URL', async (t) => {
     const options = {
         input: basic,
         onwarn: (warning, warn) => {
@@ -63,7 +63,7 @@ tap.test('plugin() - basic module - should replace lit-element with CDN url', as
     t.end();
 });
 
-tap.test('plugin() - simple module - should replace lit-element with CDN url', async (t) => {
+tap.test('plugin() - simple module - should replace lit-element with CDN URL', async (t) => {
     const options = {
         input: simple,
         onwarn: (warning, warn) => {
@@ -127,7 +127,7 @@ tap.test('plugin() - import values is an Array - should use the first entry in t
     t.end();
 });
 
-tap.test('plugin() - Interior package paths - should use the first entry in the Array', async (t) => {
+tap.test('plugin() - import specifier is a interior package path - should replace with CDN URL', async (t) => {
     const options = {
         input: file,
         onwarn: (warning, warn) => {
@@ -136,6 +136,7 @@ tap.test('plugin() - Interior package paths - should use the first entry in the 
         plugins: [plugin({
             imports: {
                 'lit-element': 'https://cdn.pika.dev/lit-element/v2',
+                'lit-html/lit-html': 'https://cdn.pika.dev/lit-html/v2',
                 'lit-html': 'https://cdn.pika.dev/lit-html/v1',
             }
         })],
@@ -144,6 +145,6 @@ tap.test('plugin() - Interior package paths - should use the first entry in the 
     const bundle = await rollup.rollup(options);
     const { output } = await bundle.generate({ format: 'esm' });
 
-    t.matchSnapshot(clean(output[0].code), 'first array entry');
+    t.matchSnapshot(clean(output[0].code), 'interior package path');
     t.end();
 });
