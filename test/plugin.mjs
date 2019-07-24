@@ -7,12 +7,14 @@ import tap from 'tap';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const simple = `${__dirname}/../utils/modules/simple/main.js`;
 const basic = `${__dirname}/../utils/modules/basic/main.js`;
+const file = `${__dirname}/../utils/modules/file/main.js`;
 
 /*
  * When running tests on Windows, the output code get some extra \r on each line.
  * Remove these so snapshots work on all OSes.
  */
 const clean = str => str.split('\r').join('');
+
 
 tap.test('plugin() - target is not an absolute URL - should reject process', (t) => {
     const options = {
@@ -81,6 +83,27 @@ tap.test('plugin() - simple module - should replace lit-element with CDN url', a
     t.end();
 });
 
+tap.test('plugin() - import map maps non bare imports - should ignore non bare imports', async (t) => {
+    const options = {
+        input: simple,
+        onwarn: (warning, warn) => {
+            // Supress logging
+        },
+        plugins: [plugin({
+            imports: {
+                'lit-element': 'https://cdn.pika.dev/lit-element/v2',
+                './utils/dom.js': 'https://cdn.pika.dev/something/v666'
+            }
+        })],
+    }
+
+    const bundle = await rollup.rollup(options);
+    const { output } = await bundle.generate({ format: 'esm' });
+
+    t.matchSnapshot(clean(output[0].code), 'non bare imports');
+    t.end();
+});
+
 tap.test('plugin() - import values is an Array - should use the first entry in the Array', async (t) => {
     const options = {
         input: basic,
@@ -93,6 +116,27 @@ tap.test('plugin() - import values is an Array - should use the first entry in t
                     'https://cdn.pika.dev/lit-element/v2',
                     'https://cdn.pika.dev/lit-element/v1',
                 ]
+            }
+        })],
+    }
+
+    const bundle = await rollup.rollup(options);
+    const { output } = await bundle.generate({ format: 'esm' });
+
+    t.matchSnapshot(clean(output[0].code), 'first array entry');
+    t.end();
+});
+
+tap.test('plugin() - Interior package paths - should use the first entry in the Array', async (t) => {
+    const options = {
+        input: file,
+        onwarn: (warning, warn) => {
+            // Supress logging
+        },
+        plugins: [plugin({
+            imports: {
+                'lit-element': 'https://cdn.pika.dev/lit-element/v2',
+                'lit-html': 'https://cdn.pika.dev/lit-html/v1',
             }
         })],
     }

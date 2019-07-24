@@ -34,7 +34,7 @@ export default {
 ## Description
 
 This plugin transforms "bare" import specifiers to absolute URL specifiers in
-ES  modules. The module refered to by the "bare" import specifier will be
+ES modules. The module refered to by the "bare" import specifier will be
 treated as an external and its source will not be included in the bundle but
 refered to by the URL.
 
