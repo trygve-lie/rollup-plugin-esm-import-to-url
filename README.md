@@ -75,7 +75,7 @@ This plugin takes an [import map](https://github.com/WICG/import-maps) as option
 | ------------------ | -------- | --------- | -------- | ----------------------------------------------------------- |
 | imports            | `{}`     | `object`  | `false`  | Mapping between "bare" import specifiers and absolute URLs. |
 
-This module will only care about "bare" import specifiers which maps to abosulte
+This module will only care about "bare" import specifiers which maps to absolute
 URLs in the import map. Any other import specifiers defined in the import map
 will be ignored.
 
