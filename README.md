@@ -69,12 +69,15 @@ import { LitElement, html, css } from 'https://cdn.pika.dev/lit-element/v2';
 
 ## Options
 
-This plugin take the following options:
+This plugin takes an [import map](https://github.com/WICG/import-maps) as options:
 
-| option             | default  | type      | required | details                                                                                                  |
-| ------------------ | -------- | --------- | -------- | -------------------------------------------------------------------------------------------------------- |
-| imports           | `{}`     | `object`  | `false`  | An import map mapping between "bare" import specifiers and absolute URLs.            |
+| option             | default  | type      | required | details                                                     |
+| ------------------ | -------- | --------- | -------- | ----------------------------------------------------------- |
+| imports            | `{}`     | `object`  | `false`  | Mapping between "bare" import specifiers and absolute URLs. |
 
+This module will only care about "bare" import specifiers which maps to abosulte
+URLs in the import map. Any other import specifiers defined in the import map
+will be ignored.
 
 ## Note on externals
 
