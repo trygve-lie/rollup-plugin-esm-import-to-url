@@ -12,7 +12,7 @@ tap.test('plugin() - target is not an absolute URL - should reject process', (t)
     const options = {
         input: simple,
         plugins: [plugin({
-            external: {
+            imports: {
                 'foo': './foo'
             }
         })],
@@ -26,7 +26,7 @@ tap.test('plugin() - target is refered to in external - should reject process', 
         input: simple,
         external: ['foo'],
         plugins: [plugin({
-            external: {
+            imports: {
                 'foo': 'http://not.a.host.com'
             }
         })],
@@ -42,7 +42,7 @@ tap.test('plugin() - basic module - should replace lit-element with CDN url', as
             // Supress logging
         },
         plugins: [plugin({
-            external: {
+            imports: {
                 'lit-element': 'https://cdn.pika.dev/lit-element/v2'
             }
         })],
@@ -62,7 +62,7 @@ tap.test('plugin() - simple module - should replace lit-element with CDN url', a
             // Supress logging
         },
         plugins: [plugin({
-            external: {
+            imports: {
                 'lit-element': 'https://cdn.pika.dev/lit-element/v2'
             }
         })],
