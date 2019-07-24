@@ -8,6 +8,12 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const simple = `${__dirname}/../utils/modules/simple/main.js`;
 const basic = `${__dirname}/../utils/modules/basic/main.js`;
 
+/*
+ * When running tests on Windows, the output code get some extra \r on each line.
+ * Remove these so snapshots work on all OSes.
+ */
+const clean = str => str.split('\r').join('');
+
 tap.test('plugin() - target is not an absolute URL - should reject process', (t) => {
     const options = {
         input: simple,
@@ -51,7 +57,7 @@ tap.test('plugin() - basic module - should replace lit-element with CDN url', as
     const bundle = await rollup.rollup(options);
     const { output } = await bundle.generate({ format: 'esm' });
 
-    t.matchSnapshot(output[0].code.split('\r').join(''), 'basic example');
+    t.matchSnapshot(clean(output[0].code), 'basic example');
     t.end();
 });
 
@@ -71,7 +77,7 @@ tap.test('plugin() - simple module - should replace lit-element with CDN url', a
     const bundle = await rollup.rollup(options);
     const { output } = await bundle.generate({ format: 'esm' });
 
-    t.matchSnapshot(output[0].code.split('\r').join(''), 'simple example');
+    t.matchSnapshot(clean(output[0].code), 'simple example');
     t.end();
 });
 
@@ -94,6 +100,6 @@ tap.test('plugin() - import values is an Array - should use the first entry in t
     const bundle = await rollup.rollup(options);
     const { output } = await bundle.generate({ format: 'esm' });
 
-    t.matchSnapshot(output[0].code.split('\r').join(''), 'first array entry');
+    t.matchSnapshot(clean(output[0].code), 'first array entry');
     t.end();
 });
