@@ -17,7 +17,7 @@ tap.test('plugin() - target is not an absolute URL - should reject process', (t)
             }
         })],
     }
-    t.rejects(rollup.rollup(options), new Error('External target must be an absolute URL.'));
+    t.rejects(rollup.rollup(options), new Error('Target for import specifier must be an absolute URL.'));
     t.end();
 });
 
@@ -31,7 +31,7 @@ tap.test('plugin() - target is refered to in external - should reject process', 
             }
         })],
     }
-    t.rejects(rollup.rollup(options), new Error('Module to be mapped must not be pressent in the Rollup external config. Please remove module from the Rollup external config.'));
+    t.rejects(rollup.rollup(options), new Error('Import specifier must NOT be present in the Rollup external config. Please remove specifier from the Rollup external config.'));
     t.end();
 });
 

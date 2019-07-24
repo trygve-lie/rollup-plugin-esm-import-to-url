@@ -12,8 +12,8 @@ export default function esmImportToUrl({
             Object.keys(imports).forEach((key) => {
                 const value = Array.isArray(imports[key]) ? imports[key][0] : imports[key];
 
-                if (options.external.includes(key)) throw Error('Module to be mapped must not be pressent in the Rollup external config. Please remove module from the Rollup external config.');
-                if (notUrl(value)) throw Error('External target must be an absolute URL.');
+                if (options.external.includes(key)) throw Error('Import specifier must NOT be present in the Rollup external config. Please remove specifier from the Rollup external config.');
+                if (notUrl(value)) throw Error('Target for import specifier must be an absolute URL.');
 
                 mapping.set(key, value);
             });
