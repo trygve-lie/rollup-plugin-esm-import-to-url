@@ -1,2 +1,4 @@
+tap-snapshots
 node_modules
+dist
 tmp

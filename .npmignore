@@ -1,10 +1,8 @@
+tap-snapshots
 node_modules
-.nyc_output/
-benchmark/
-example/
-utils/
-test/
-src/
+.nyc_output
+modules
+test
 *.log
 *.png
 *.svg
@@ -14,4 +12,3 @@ src/
 .eslintignore
 .travis.yml
 rollup.config.js
-tap-snapshots

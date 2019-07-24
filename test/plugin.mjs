@@ -5,9 +5,9 @@ import url from 'url';
 import tap from 'tap';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const simple = `${__dirname}/../utils/modules/simple/main.js`;
-const basic = `${__dirname}/../utils/modules/basic/main.js`;
-const file = `${__dirname}/../utils/modules/file/main.js`;
+const simple = `${__dirname}/../modules/simple/main.js`;
+const basic = `${__dirname}/../modules/basic/main.js`;
+const file = `${__dirname}/../modules/file/main.js`;
 
 /*
  * When running tests on Windows, the output code get some extra \r on each line.
