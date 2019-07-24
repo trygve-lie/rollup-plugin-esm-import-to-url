@@ -15,6 +15,16 @@ render();
 
 `
 
+exports[`test/plugin.mjs TAP plugin() - import values is an Array - should use the first entry in the Array > first array entry 1`] = `
+import { html } from 'https://cdn.pika.dev/lit-element/v2';
+
+const render = (world) => {
+    return html\`<p>Hello \${world}!</p>\`;
+};
+render();
+
+`
+
 exports[`test/plugin.mjs TAP plugin() - simple module - should replace lit-element with CDN url > simple example 1`] = `
 import { html } from 'https://cdn.pika.dev/lit-element/v2';
 

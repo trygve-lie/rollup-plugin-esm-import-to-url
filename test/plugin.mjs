@@ -74,3 +74,26 @@ tap.test('plugin() - simple module - should replace lit-element with CDN url', a
     t.matchSnapshot(output[0].code.split('\r').join(''), 'simple example');
     t.end();
 });
+
+tap.test('plugin() - import values is an Array - should use the first entry in the Array', async (t) => {
+    const options = {
+        input: basic,
+        onwarn: (warning, warn) => {
+            // Supress logging
+        },
+        plugins: [plugin({
+            imports: {
+                'lit-element': [
+                    'https://cdn.pika.dev/lit-element/v2',
+                    'https://cdn.pika.dev/lit-element/v1',
+                ]
+            }
+        })],
+    }
+
+    const bundle = await rollup.rollup(options);
+    const { output } = await bundle.generate({ format: 'esm' });
+
+    t.matchSnapshot(output[0].code.split('\r').join(''), 'first array entry');
+    t.end();
+});
