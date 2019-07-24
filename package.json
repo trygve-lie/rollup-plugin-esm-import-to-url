@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-esm-import-to-url",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Rollup plugin to transform bare import specifiers to absolute URLs in ES modules",
   "main": "dist/plugin.cjs.js",
   "directories": {
