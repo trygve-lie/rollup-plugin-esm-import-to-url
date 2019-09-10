@@ -37,6 +37,6 @@
     "eslint-plugin-import": "2.18.2",
     "eslint": "6.1.0",
     "rollup": "1.19.3",
-    "tap": "14.6.1"
+    "tap": "14.6.2"
   }
 }
