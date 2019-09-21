@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/trygve-lie/rollup-plugin-esm-import-to-url#readme",
   "devDependencies": {
-    "eslint-config-airbnb-base": "13.2.0",
+    "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint": "6.1.0",
     "rollup": "1.19.3",
