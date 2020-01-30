@@ -1,6 +1,6 @@
-const notUrl = url => url.substr(0, 4) !== 'http';
+const notUrl = (url) => url.substr(0, 4) !== 'http';
 
-const notBare = str => str.startsWith('/') || str.startsWith('./') || str.startsWith('../');
+const notBare = (str) => str.startsWith('/') || str.startsWith('./') || str.startsWith('../');
 
 export default function esmImportToUrl({
     imports = {},
