@@ -2,9 +2,9 @@
 
 Rollup plugin to transform "bare" import specifiers to absolute URLs in ES modules
 
-[![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-import-to-url.svg?style=flat-square)](https://david-dm.org/trygve-lie/rollup-plugin-esm-import-to-url)
-[![Build Status](http://img.shields.io/travis/trygve-lie/rollup-plugin-esm-import-to-url/master.svg?style=flat-square)](https://travis-ci.org/trygve-lie/rollup-plugin-esm-import-to-url)
-[![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/trygve-lie/rollup-plugin-esm-import-to-url.svg)](https://greenkeeper.io/)
+[![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-import-to-url.svg)](https://david-dm.org/trygve-lie/rollup-plugin-esm-import-to-url)
+![GitHub Actions status](https://github.com/trygve-lie/rollup-plugin-esm-import-to-url/workflows/Run%20Lint%20and%20Tests/badge.svg)
+[![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url/badge.svg)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url)
 
 ## Installation
 
