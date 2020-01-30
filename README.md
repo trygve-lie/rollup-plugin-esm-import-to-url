@@ -3,7 +3,7 @@
 Rollup plugin to transform "bare" import specifiers to absolute URLs in ES modules
 
 [![Dependencies](https://img.shields.io/david/trygve-lie/rollup-plugin-esm-import-to-url.svg)](https://david-dm.org/trygve-lie/rollup-plugin-esm-import-to-url)
-![GitHub Actions status](https://github.com/trygve-lie/rollup-plugin-esm-import-to-url/workflows/Run%20Lint%20and%20Tests/badge.svg)
+[![GitHub Actions status](https://github.com/trygve-lie/rollup-plugin-esm-import-to-url/workflows/Run%20Lint%20and%20Tests/badge.svg)](https://github.com/trygve-lie/rollup-plugin-esm-import-to-url/actions)
 [![Known Vulnerabilities](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url/badge.svg)](https://snyk.io/test/github/trygve-lie/rollup-plugin-esm-import-to-url)
 
 ## Installation
