@@ -16,7 +16,13 @@ export default function esmImportToUrl({
 
                 if (notBare(key)) return;
 
-                if (options.external.includes(key)) throw Error('Import specifier must NOT be present in the Rollup external config. Please remove specifier from the Rollup external config.');
+                if (typeof options.external === 'function') {
+                    if (options.external(key)) throw Error('Import specifier must NOT be present in the Rollup external config. Please remove specifier from the Rollup external config.');
+                }
+                if (Array.isArray(options.external)) {
+                    if (options.external.includes(key)) throw Error('Import specifier must NOT be present in the Rollup external config. Please remove specifier from the Rollup external config.');
+                }
+
                 if (notUrl(value)) throw Error('Target for import specifier must be an absolute URL.');
 
                 mapping.set(key, value);
